@@ -1,7 +1,12 @@
 import './App.css';
+import Jokes from './components/Jokes';
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Jokes />
+    </div>
+  );
 }
 
 export default App;

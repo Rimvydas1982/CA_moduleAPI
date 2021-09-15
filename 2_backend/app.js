@@ -34,6 +34,20 @@ app.get('/api/jokes/categories', async (req, res) => {
   res.json(body);
 });
 
+//
+app.get('/api/jok/', async (req, res) => {
+  try {
+    let Norrisjokes = [];
+    for (let i = 0; i < 10; i++) {
+      const response = await fetch('https://api.chucknorris.io/jokes/random');
+      Norrisjokes.push(response.data.value);
+    }
+    res.json(jokes);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 //Starting server
 // -- CONNECTING TO DB
 mongoose
